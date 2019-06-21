@@ -20,10 +20,8 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
 
             $table->string('cate_id', 5);
-            $table->bigInteger('image_id')->unsigned();
 
             $table->foreign('cate_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('image_id')->references('id')->on('images')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

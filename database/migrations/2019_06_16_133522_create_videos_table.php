@@ -19,10 +19,6 @@ class CreateVideosTable extends Migration
             $table->string('title')->nullable();
             $table->string('slug')->nullable();
 
-            $table->bigInteger('image_id')->unsigned();
-
-            $table->foreign('image_id')->references('id')->on('images')->onUpdate('cascade')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
