@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-     /**
+    /**
      * Create a new AuthController instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'signup']]);
+        $this->middleware('JWT', ['except' => ['login', 'signup']]);
     }
 
     /**
@@ -25,7 +25,7 @@ class AuthController extends Controller
      */
     public function login()
     {
-        $credentials = request(['name', 'password']);
+        $credentials = request(['email', 'password']);
 
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
