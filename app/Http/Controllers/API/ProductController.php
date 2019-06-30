@@ -32,7 +32,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->cate_id = $request->cate_id;
         $product->save();
-        return response('Created category successfully', 201);
+        return response('Created product successfully', 201);
     }
 
     /**
@@ -43,7 +43,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return Product::find($id);
     }
 
     /**
@@ -53,9 +53,15 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $product->update([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+            'cate_id' => $request->cate_id
+        ]);
+        return response('Updated product successfully', 202);
     }
 
     /**
@@ -64,8 +70,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return response(null, 204);
     }
 }
