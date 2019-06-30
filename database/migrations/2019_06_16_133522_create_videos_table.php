@@ -18,7 +18,10 @@ class CreateVideosTable extends Migration
             $table->string('url');
             $table->string('title')->nullable();
             $table->string('slug')->nullable();
+<<<<<<< HEAD
 
+=======
+>>>>>>> man
             $table->timestamps();
         });
     }
