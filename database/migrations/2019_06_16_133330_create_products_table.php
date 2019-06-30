@@ -19,12 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('price')->unsigned();
             $table->text('description')->nullable();
 
-<<<<<<< HEAD
-            $table->string('cate_id', 5);
-
-=======
             $table->integer('cate_id')->unsigned();
->>>>>>> man
             $table->foreign('cate_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
