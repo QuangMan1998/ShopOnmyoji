@@ -23,11 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('sex')->default('0');
             $table->string('address')->nullable();
             $table->char('phone', 10);
-
-            $table->bigInteger('image_id')->unsigned();
             $table->string('role_id', 3);
-
-            $table->foreign('image_id')->references('id')->on('images')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('role_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();

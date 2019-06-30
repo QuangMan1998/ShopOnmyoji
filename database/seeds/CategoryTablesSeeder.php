@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class CategoryTablesSeeder extends Seeder
 {
@@ -13,13 +14,11 @@ class CategoryTablesSeeder extends Seeder
     {
         DB::table('categories')->insert([
             [
-                'id' => 'MK',
                 'name' => 'Móc khóa',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
-                'id' => 'STD',
                 'name' => 'Standee',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Model\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return Product::latest()->get();
     }
 
     /**
@@ -25,7 +26,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->cate_id = $request->cate_id;
+        $product->save();
+        return response('Created category successfully', 201);
     }
 
     /**

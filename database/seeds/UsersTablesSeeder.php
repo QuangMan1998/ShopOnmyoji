@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UsersTablesSeeder extends Seeder
 {
@@ -20,7 +21,6 @@ class UsersTablesSeeder extends Seeder
                 'address' => 'ádasd',
                 'phone' => '0122142',
                 'role_id' => 'adm',
-                'image_id' => '',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
