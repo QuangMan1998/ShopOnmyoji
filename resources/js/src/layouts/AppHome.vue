@@ -2,14 +2,14 @@
     <div>
         <toolbar></toolbar>
         <router-view :key="$route.fullPath"></router-view>
-        <!-- <app-footer></app-footer> -->
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
 import toolbar from '../components/Toolbar'
-// import AppFooter from '../components/AppFooter'
+import Footer from '../components/Footer'
 export default {
-    components: {toolbar}
+    components: {toolbar, Footer}
 }
 </script>
